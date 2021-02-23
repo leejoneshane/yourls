@@ -15,13 +15,6 @@ ADD entrypoint.sh /usr/local/bin/entrypoint.sh
 WORKDIR /var/www/html
 
 RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo 'UTC' > /etc/timezone \
-    && apt-get update \
-    && apt-get install apt-transport-https lsb-release logrotate git curl vim net-tools iputils-ping libzip-dev libpng-dev libjpeg-dev libfreetype6-dev libbz2-dev libxml2-dev libonig-dev libcurl4-openssl-dev -y --no-install-recommends \
-    && docker-php-ext-configure gd --with-freetype=/usr/include --with-jpeg=/usr/include \
-    && docker-php-ext-install -j$(nproc) bcmath xml mbstring curl mysqli gd zip \
-    && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /root/.cache \
-    && a2enmod rewrite \
-    && echo "post_max_size = 10G\nupload_max_filesize = 10G" > $PHP_INI_DIR/conf.d/upload.ini \
     && echo "memory_limit = -1" > $PHP_INI_DIR/conf.d/memory.ini \
     && echo "max_execution_time = 72000" > $PHP_INI_DIR/conf.d/execution_time.ini \
     && git clone https://github.com/YOURLS/YOURLS.git \
