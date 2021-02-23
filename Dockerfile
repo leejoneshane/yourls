@@ -32,7 +32,7 @@ RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo 'UTC' > /etc/timezone
     && chown -R www-data:www-data /var/www/html
 
 ADD config.php /var/www/html/user/
-COPY tw.mo /var/www/html/tw.mo
+COPY tw.mo /var/www/html/user/language/tw.mo
 
 EXPOSE 80
 VOLUME ["/var/www/html"]
