@@ -15,7 +15,6 @@ WORKDIR /var/www/html
 
 RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo 'UTC' > /etc/timezone \
     && echo "memory_limit = -1" > $PHP_INI_DIR/conf.d/memory.ini \
-    && echo "max_execution_time = 72000" > $PHP_INI_DIR/conf.d/execution_time.ini \
     && git clone https://github.com/YOURLS/YOURLS.git \
     && mv YOURLS/* . \
     && mv YOURLS/.[!.]* . \
@@ -23,7 +22,7 @@ RUN ln -snf /usr/share/zoneinfo/UTC /etc/localtime && echo 'UTC' > /etc/timezone
     && chown -R www-data:www-data /var/www/html
 
 ADD config.php /var/www/html/user/
-COPY tw.mo /var/www/html/user/language/tw.mo
+COPY tw.mo /var/www/html/user/languages/tw.mo
 
 EXPOSE 80
 VOLUME ["/var/www/html"]
