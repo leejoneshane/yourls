@@ -27,7 +27,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && chown -R www-data:www-data /var/www/html
 
 ADD config.php /var/www/html/user/
-ADD tw.mo /var/www/html/user/languages/
+ADD zh_TW.mo /var/www/html/user/languages/
 
 EXPOSE 80
 VOLUME ["/var/www/html"]
