@@ -63,7 +63,7 @@ define( 'YOURLS_COOKIEKEY', getenv('SALT') );
  ** YOURLS will auto encrypt plain text passwords in this file
  ** Read http://yourls.org/userpassword for more information */
 $yourls_user_passwords = [
-	env('ADMIN') => getenv('ADMIN_PASSWORD'),
+	getenv('ADMIN') => getenv('ADMIN_PASSWORD'),
 	// 'username2' => 'password2',
 	// You can have one or more 'login'=>'password' lines
 ];
