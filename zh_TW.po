@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YOURLS 1.8\n"
 "POT-Creation-Date: 2021-02-22 12:09+0100\n"
-"PO-Revision-Date: 2021-02-24 14:13+0800\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2021-02-26 07:36+0800\n"
+"Language-Team: leejoneshane@gmail.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -725,7 +725,7 @@ msgstr "輸入網址"
 
 #: includes/functions-html.php:188
 msgid "Optional "
-msgstr "選項 "
+msgstr "可留白 "
 
 #: includes/functions-html.php:188
 msgid "Custom short URL"
