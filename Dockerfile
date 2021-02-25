@@ -20,6 +20,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && docker-php-ext-install -j$(nproc) xml mbstring pdo pdo_mysql \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /root/.cache \
     && a2enmod rewrite \
+    && sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf \
     && echo "memory_limit = -1" > $PHP_INI_DIR/conf.d/memory.ini \
     && git clone https://github.com/YOURLS/YOURLS.git \
     && mv YOURLS/* . \
