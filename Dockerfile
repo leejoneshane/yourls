@@ -16,7 +16,7 @@ WORKDIR /var/www/html
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get update \
-    && apt-get install apt-transport-https lsb-release logrotate git curl vim net-tools libxml2-dev -y --no-install-recommends \
+    && apt-get install apt-transport-https lsb-release logrotate git curl vim net-tools libxml2-dev libonig-dev -y --no-install-recommends \
     && docker-php-ext-install -j$(nproc) xml mbstring pdo pdo_mysql \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /root/.cache \
     && echo "memory_limit = -1" > $PHP_INI_DIR/conf.d/memory.ini \
