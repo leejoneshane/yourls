@@ -17,7 +17,7 @@ WORKDIR /var/www/html
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     && apt-get update \
     && apt-get install apt-transport-https lsb-release logrotate git curl vim net-tools libzip-dev libbz2-dev libxml2-dev libonig-dev libcurl4-openssl-dev -y --no-install-recommends \
-    && docker-php-ext-install -j$(nproc) bcmath xml mbstring curl mysqli zip \
+    && docker-php-ext-install -j$(nproc) bcmath xml mbstring curl pdo pdo_mysql mysqli zip \
     && rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/* /root/.cache \
     && echo "memory_limit = -1" > $PHP_INI_DIR/conf.d/memory.ini \
     && git clone https://github.com/YOURLS/YOURLS.git \
